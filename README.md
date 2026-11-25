@@ -1,5 +1,7 @@
 # dnsfilter-module
 
+> ⚠️ **v1.3.0 为已知问题版本，请勿升级/使用**：建议停留在 v1.2.3，等待修复版本发布。
+
 本地 DNS 广告拦截（SukiSU / KernelSU / Magisk）的发布与更新源。
 
 - 更新清单：`update.json`
