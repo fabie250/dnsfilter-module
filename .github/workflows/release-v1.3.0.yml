@@ -1,0 +1,23 @@
+name: release-v1.3.0
+on:
+  push:
+    paths:
+      - '.release/v1.3.0'
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download module zip
+        run: |
+          curl -fL --retry 3 --retry-delay 5 -o dnsfilter-v1.3.0-arm64.zip "https://aka.doubaocdn.com/s/VCV0kh3bYw"
+          echo "e9fda319f6d50a1bb081c6ba56118d9be4d88d7bdaa897561e07929b81da7690  dnsfilter-v1.3.0-arm64.zip" | sha256sum -c
+          unzip -p dnsfilter-v1.3.0-arm64.zip module.prop | head -6
+          unzip -l dnsfilter-v1.3.0-arm64.zip | tail -3
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create v1.3.0 dnsfilter-v1.3.0-arm64.zip --title "v1.3.0" --notes-file .release/notes-v1.3.0.md || gh release upload v1.3.0 dnsfilter-v1.3.0-arm64.zip --clobber
