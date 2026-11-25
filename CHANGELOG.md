@@ -1,5 +1,7 @@
 # dnsfilter v1.3.0
 
+> ⚠️ **此版本存在已知问题，已被标记为不建议使用的版本**：建议继续使用 v1.2.3，等待修复版本发布。
+
 - 新增 SNI 观测引擎（`snid`，Go 静态 arm64）：对指定 App 的 443 连接做本地透明转发，读取 TLS ClientHello 的 SNI，记录真实域名
 - 覆盖 HTTPDNS / 直连 IP 的广告 SDK：DNS 看不到的域名，在 TLS 握手层仍可见
 - 自动阻断目标 App 的 QUIC（UDP 443），让流量回到可识别的 TCP TLS
