@@ -1,6 +1,6 @@
 {
-  "version": "v1.2.3",
-  "versionCode": 12003,
-  "zipUrl": "https://github.com/fabie250/dnsfilter-module/releases/download/v1.2.3/dnsfilter-v1.2.3-arm64.zip",
+  "version": "v1.3.0",
+  "versionCode": 13000,
+  "zipUrl": "https://github.com/fabie250/dnsfilter-module/releases/download/v1.3.0/dnsfilter-v1.3.0-arm64.zip",
   "changelog": "https://cdn.jsdelivr.net/gh/fabie250/dnsfilter-module@main/CHANGELOG.md"
 }
